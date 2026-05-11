@@ -1,23 +1,44 @@
 extends CharacterBody2D
 
+@export var patrol_points : Node
+
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var timer: Timer = $Timer
+
+
 const GRAVITY = 1000
 const SPEED = 1500
 
 enum State { Idle, Walk}
 var current_state : State
 var direction : Vector2 = Vector2.LEFT
+var number_of_points : int
+var point_positions: Array[Vector2]
+var current_point : Vector2
+var current_point_position : int
+var cam_walk : bool
 
-func _ready() -> void:
-	pass
+func _ready():
+	if patrol_points != null:
+		number_of_points = patrol_points.get_children().size()
+		for point in patrol_points.get_children():
+			point_positions.append(point.global_position)
+		current_point = point_positions[current_point_position]
+	else:
+		print("No patrol points")
 	
+	
+	current_state = State.Idle
 	
 func _physics_process(delta : float):
 	enemy_gravity(delta)
 	enemy_idle(delta)
-	enemy_walk(delta)
+	if point_positions.size() > 0:
+		enemy_walk(delta)
 	
 	move_and_slide()
 	
+	enemy_anaimation()
 	
 func enemy_gravity(delta : float):
 	velocity.y += GRAVITY * delta
@@ -25,10 +46,41 @@ func enemy_gravity(delta : float):
 
 
 func enemy_idle(delta: float):
-	velocity.x = move_toward(velocity.x, 0, SPEED * delta)
-	current_state = State.Idle
+	if !cam_walk: 
+		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
+		current_state = State.Idle
 
 
 func enemy_walk(delta : float):
-	velocity.x = direction.x * SPEED * delta
-	current_state = State.Walk
+	if !cam_walk:
+		return
+	
+	if abs(position.x -current_point.x) > 0.5:
+		velocity.x = direction.x * SPEED * delta
+		current_state = State.Walk
+	else:
+		current_point_position += 1
+		
+		if current_point_position >= number_of_points:
+			current_point_position = 0
+		
+		current_point = point_positions[current_point_position];
+	
+		if current_point.x > position.x:
+			direction = Vector2.RIGHT
+		else:
+			direction = Vector2.LEFT
+
+		cam_walk = false
+		timer.start()
+
+	animated_sprite_2d.flip_h = direction.x > 0
+
+func enemy_anaimation():
+	if current_state == State.Idle && !cam_walk:
+		animated_sprite_2d.play("idle")
+	elif current_state == State.Walk &&  cam_walk:
+		animated_sprite_2d.play("walk")
+
+func _on_timer_timeout() -> void:
+	cam_walk = true
