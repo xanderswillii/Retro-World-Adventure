@@ -130,11 +130,17 @@ texture = ExtResource("1_80vhd")
 8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
 11:1/0 = 0
 12:1/0 = 0
+12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.2655296, -8, 8, -8, 8, 8, 4.78784, 8, 2.0021877, -1.13167)
 13:1/0 = 0
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:1/0 = 0
+14:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.2655296, -8, 8, -8, 8, 8, 4.78784, 8, 2.0021877, -1.13167)
 16:1/0 = 0
+16:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.2655296, -8, 8, -8, 8, 8, 4.78784, 8, 2.0021877, -0.43525696)
 17:1/0 = 0
+17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:1/0 = 0
+18:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -4.78784, -8, -2.0021877, 0.08705139, -6.180666, 8, -8, 8)
 2:3/0 = 0
 3:3/0 = 0
 5:3/0 = 0
@@ -362,6 +368,7 @@ texture = ExtResource("3_oou4v")
 
 [sub_resource type="TileSet" id="TileSet_cwqvt"]
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 3
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Ground 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
