@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d1bes8ov8hhb2" path="res://levels/Base_Level.tscn" id="1_vn7o3"]
 [ext_resource type="PackedScene" uid="uid://cxx71p2onrcpe" path="res://background/parallax_background.tscn" id="2_jirdo"]
+[ext_resource type="PackedScene" uid="uid://b4yau5bbxuvwe" path="res://enemies/enemy_crab.tscn" id="3_bt44k"]
 
 [node name="Level1" unique_id=304558790 instance=ExtResource("1_vn7o3")]
 
@@ -19,9 +20,15 @@ tile_map_data = PackedByteArray("AAD8//n/AAAOAAcAAAD8//r/AAAPAAgAAAD9//n/AAAPAAc
 
 [node name="Player" parent="." index="3" unique_id=1908757539]
 position = Vector2(56, -56)
+speed = 1000
+max_horizontal_speed = 300
+slow_down_speed = 1700
+jump = -300
+jump_horizontal_speed = 1000
+max_jump_horizontal_speed = 300
 
-[node name="Camera2D" parent="Player" index="2" unique_id=646131820]
-limit_left = 0
+[node name="Camera2D" parent="Player" index="3" unique_id=646131820]
+limit_left = -27
 limit_top = -319
 limit_right = 1687
 limit_bottom = 20
@@ -29,3 +36,17 @@ editor_draw_limits = true
 
 [node name="Foreground" parent="." index="4" unique_id=289473192]
 tile_map_data = PackedByteArray("AAAKAP3/AAABAAYAAAAKAP7/AAABAAcAAAAKAP//AAABAAgAAAATAP3/AAABAAYAAAATAP7/AAABAAcAAAATAP//AAABAAgAAAAYAP3/AAABAAYAAAAYAP7/AAABAAcAAAAYAP//AAABAAgAAAA=")
+
+[node name="Enemies" type="Node" parent="." index="5" unique_id=1777336076]
+
+[node name="EnemyCrab" parent="Enemies" index="0" unique_id=357453463 node_paths=PackedStringArray("patrol_points") instance=ExtResource("3_bt44k")]
+position = Vector2(576, -40)
+patrol_points = NodePath("PatrolPoints")
+
+[node name="PatrolPoints" type="Node2D" parent="Enemies/EnemyCrab" index="3" unique_id=614341270]
+
+[node name="Point1" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints" index="0" unique_id=362763372]
+position = Vector2(-136, 8)
+
+[node name="Point2" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints" index="1" unique_id=329309943]
+position = Vector2(56, 8)

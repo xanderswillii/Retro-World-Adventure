@@ -28,13 +28,15 @@ func _physics_process(delta : float):
 	player_idle(delta)
 	player_run(delta)
 	player_jump(delta)
+	
+	player_muzzle_position()
 	player_shooting(delta)
 	
 	move_and_slide()
 	
 	player_animation()
 	
-	print("State: ", State.keys()[current_state])
+	#print("State: ", State.keys()[current_state])
 	
 	
 func player_falling(delta : float):
@@ -83,7 +85,19 @@ func player_shooting(delta : float):
 	var direction = input_movement()
 
 	if direction !=0 and Input.is_action_just_pressed("shoot"):
+		var bullet_instance = bullet.instantiate() as Node2D
+		bullet_instance.direction = direction
+		bullet_instance.global_position = muzzle.global_position
+		get_parent().add_child(bullet_instance)
 		current_state = State.Shoot
+
+func player_muzzle_position():
+	var direction = input_movement()
+	
+	if direction > 0:
+		muzzle.position.x = muzzle_position.x
+	elif direction <0:
+		muzzle.position.x = -muzzle_position.x
 
 func player_animation(): 
 	if current_state == State.Idle:

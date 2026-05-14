@@ -250,6 +250,12 @@ height = 42.0
 [node name="Player" type="CharacterBody2D" unique_id=1908757539]
 collision_layer = 2
 script = ExtResource("1_g1dw6")
+speed = null
+max_horizontal_speed = null
+slow_down_speed = null
+jump = null
+jump_horizontal_speed = null
+max_jump_horizontal_speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=310276540]
 position = Vector2(0, -24)
