@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b4yau5bbxuvwe"]
 
-[ext_resource type="Texture2D" uid="uid://8sq0wx42igdm" path="res://enemies/crab-idle.png" id="1_0krxu"]
-[ext_resource type="Script" uid="uid://bhdwiak5kev4j" path="res://enemies/enemy_crab.gd" id="1_pm84v"]
-[ext_resource type="Texture2D" uid="uid://50tywd1i4qub" path="res://enemies/crab-walk.png" id="2_pm84v"]
+[ext_resource type="Texture2D" uid="uid://8sq0wx42igdm" path="res://enemies/crab/crab-idle.png" id="1_0krxu"]
+[ext_resource type="Script" uid="uid://bhdwiak5kev4j" path="res://enemies/crab/enemy_crab.gd" id="1_pm84v"]
+[ext_resource type="Texture2D" uid="uid://50tywd1i4qub" path="res://enemies/crab/crab-walk.png" id="2_pm84v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mnp8h"]
 atlas = ExtResource("1_0krxu")

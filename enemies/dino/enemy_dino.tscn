@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://f87r7t5p0r4c"]
+
+[node name="EnemyDino" type="CharacterBody2D" unique_id=801729110]
