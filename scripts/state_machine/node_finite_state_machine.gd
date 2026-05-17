@@ -1,4 +1,4 @@
-class_name NodeFiniteStateMashine
+class_name NodeFiniteStateMachine
 extends Node
 
 @export var initial_node_state : NodeState

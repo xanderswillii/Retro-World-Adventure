@@ -5,10 +5,11 @@ var enemy_death_effect = preload("res://enemies/enemy_death_effect.tscn")
 @export var patrol_points : Node
 @export var speed : int = 1500
 @export var wait_time : int = 3
+@onready var health_amount : int = 3
+@onready var damage_amount : int = 1
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
-@onready var health_amount : int = 3
 
 
 const GRAVITY = 1000
