@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cd28534xijjwn"]
+
+[ext_resource type="Texture2D" uid="uid://b1wpboft1yc88" path="res://collectibles/coins-chests-etc-2-0.png" id="1_nu71i"]
+[ext_resource type="Script" uid="uid://br75e2xp2wllg" path="res://collectibles/blue_coin/blue_coin.gd" id="1_oo3kn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oo3kn"]
+atlas = ExtResource("1_nu71i")
+region = Rect2(0, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evunr"]
+atlas = ExtResource("1_nu71i")
+region = Rect2(16, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lcin"]
+atlas = ExtResource("1_nu71i")
+region = Rect2(32, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1yy0"]
+atlas = ExtResource("1_nu71i")
+region = Rect2(48, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn0jx"]
+atlas = ExtResource("1_nu71i")
+region = Rect2(64, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gayef"]
+atlas = ExtResource("1_nu71i")
+region = Rect2(80, 0, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wjwef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oo3kn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evunr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lcin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1yy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn0jx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gayef")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nu71i"]
+radius = 7.0
+
+[node name="BlueCoin" type="Node2D" unique_id=1929891030]
+script = ExtResource("1_oo3kn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2133965811]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_wjwef")
+autoplay = "default"
+frame_progress = 0.24675229
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1058257776]
+position = Vector2(1, 0)
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=382253704]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_nu71i")
+debug_color = Color(0.90418524, 0.26400864, 0.4084352, 0.41960785)
+
+[node name="Label" type="Label" parent="." unique_id=1457712884]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

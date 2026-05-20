@@ -1,8 +1,48 @@
 [gd_scene format=3 uid="uid://cr3n30r7tgjx4"]
 
 [ext_resource type="PackedScene" uid="uid://iubegfjnyogq" path="res://ui/health_bar/health_bar.tscn" id="1_g4tl3"]
+[ext_resource type="Script" uid="uid://dlm6ip7tspel4" path="res://ui/game_screen.gd" id="1_vb34k"]
+[ext_resource type="Texture2D" uid="uid://b1wpboft1yc88" path="res://collectibles/coins-chests-etc-2-0.png" id="2_sp4y4"]
 
 [node name="GameScreen" type="CanvasLayer" unique_id=2066167113]
+script = ExtResource("1_vb34k")
 
-[node name="HealthBar" parent="." unique_id=1986246909 instance=ExtResource("1_g4tl3")]
-position = Vector2(10, 10)
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1898704001]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1249706928]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1780574948]
+custom_minimum_size = Vector2(0, 11)
+layout_mode = 2
+
+[node name="HealthBar" parent="MarginContainer/VBoxContainer/Control" unique_id=1986246909 instance=ExtResource("1_g4tl3")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1599438776]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1015580349]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/HBoxContainer/Control" unique_id=81321248]
+texture = ExtResource("2_sp4y4")
+centered = false
+hframes = 20
+vframes = 4
+
+[node name="CollectibleLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=564553329]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "0"

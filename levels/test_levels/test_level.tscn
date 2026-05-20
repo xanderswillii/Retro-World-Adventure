@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b4yau5bbxuvwe" path="res://enemies/crab/enemy_crab.tscn" id="4_hvxhd"]
 [ext_resource type="PackedScene" uid="uid://c68vlrjqkjpbf" path="res://pickups/health_pickup/health_pickup.tscn" id="4_mo4vu"]
 [ext_resource type="PackedScene" uid="uid://cr3n30r7tgjx4" path="res://ui/game_screen.tscn" id="5_mo4vu"]
+[ext_resource type="PackedScene" uid="uid://cd28534xijjwn" path="res://collectibles/blue_coin/blue_coin.tscn" id="6_n6wdg"]
 
 [node name="TestLevel" unique_id=304558790 instance=ExtResource("1_7dtao")]
 
@@ -22,3 +23,8 @@ position = Vector2(588, 24)
 position = Vector2(687, -2)
 
 [node name="GameScreen" parent="." index="7" unique_id=2066167113 instance=ExtResource("5_mo4vu")]
+
+[node name="Collectibles" type="Node" parent="." index="8" unique_id=59453397]
+
+[node name="BlueCoin" parent="Collectibles" index="0" unique_id=1929891030 instance=ExtResource("6_n6wdg")]
+position = Vector2(400, 4)
