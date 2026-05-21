@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bdt16mp7ww064"]
+
+[ext_resource type="Texture2D" uid="uid://danm34wwmlhho" path="res://ui/environment-preview.png" id="1_rmr83"]
+[ext_resource type="Theme" uid="uid://cgvy45r7poc24" path="res://ui/theme/game_theme.tres" id="2_8uxxo"]
+[ext_resource type="Texture2D" uid="uid://bplwcqmd677or" path="res://ui/player-run-4.png" id="3_ei257"]
+[ext_resource type="Texture2D" uid="uid://b7co7q37f4mkw" path="res://ui/crab-idle-2.png" id="4_p8ri8"]
+
+[node name="MainMenu" type="CanvasLayer" unique_id=124946697]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=990803195]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -321.0
+offset_top = -64.0
+offset_right = 255.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rmr83")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2076069310]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_8uxxo")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=983976580]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=1759786438]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=863564327]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=90620595]
+layout_mode = 2
+text = "Play"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=681510936]
+layout_mode = 2
+text = "Exit"
+
+[node name="PlayerRun4" type="Sprite2D" parent="." unique_id=702301661]
+position = Vector2(192, 234)
+texture = ExtResource("3_ei257")
+
+[node name="CrabIdle2" type="Sprite2D" parent="." unique_id=1230228125]
+position = Vector2(252, 234)
+texture = ExtResource("4_p8ri8")
