@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c68vlrjqkjpbf" path="res://pickups/health_pickup/health_pickup.tscn" id="4_mo4vu"]
 [ext_resource type="PackedScene" uid="uid://cr3n30r7tgjx4" path="res://ui/game_screen.tscn" id="5_mo4vu"]
 [ext_resource type="PackedScene" uid="uid://cd28534xijjwn" path="res://collectibles/blue_coin/blue_coin.tscn" id="6_n6wdg"]
+[ext_resource type="PackedScene" uid="uid://cqyvct1gvh5ui" path="res://collectibles/Gem/gems.tscn" id="7_dvnjj"]
+[ext_resource type="PackedScene" uid="uid://cl4nkcxasjlfw" path="res://collectibles/Diamond/diamond.tscn" id="8_1digy"]
 
 [node name="TestLevel" unique_id=304558790 instance=ExtResource("1_7dtao")]
 
@@ -28,3 +30,9 @@ position = Vector2(687, -2)
 
 [node name="BlueCoin" parent="Collectibles" index="0" unique_id=1929891030 instance=ExtResource("6_n6wdg")]
 position = Vector2(400, 4)
+
+[node name="GreenGem" parent="Collectibles" index="1" unique_id=1199082386 instance=ExtResource("7_dvnjj")]
+position = Vector2(470, 3)
+
+[node name="Diamond" parent="Collectibles" index="2" unique_id=1468304558 instance=ExtResource("8_1digy")]
+position = Vector2(525, 1)

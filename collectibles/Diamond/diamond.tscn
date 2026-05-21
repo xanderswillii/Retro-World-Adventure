@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cl4nkcxasjlfw"]
+
+[ext_resource type="Script" uid="uid://dhkca7o8lp7dh" path="res://collectibles/Diamond/diamond.gd" id="1_3y08s"]
+[ext_resource type="Texture2D" uid="uid://b1wpboft1yc88" path="res://collectibles/coins-chests-etc-2-0.png" id="1_c23xu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y08s"]
+atlas = ExtResource("1_c23xu")
+region = Rect2(224, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se1ap"]
+atlas = ExtResource("1_c23xu")
+region = Rect2(240, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we8hr"]
+atlas = ExtResource("1_c23xu")
+region = Rect2(256, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_miu5e"]
+atlas = ExtResource("1_c23xu")
+region = Rect2(272, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmjt8"]
+atlas = ExtResource("1_c23xu")
+region = Rect2(288, 17, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uk5gx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3y08s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se1ap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we8hr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_miu5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmjt8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_se1ap"]
+radius = 7.0
+
+[node name="Diamond" type="Node2D" unique_id=1468304558]
+script = ExtResource("1_3y08s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2040572445]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_uk5gx")
+frame = 1
+frame_progress = 0.10433375
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1834305532]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=286827721]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_se1ap")
+debug_color = Color(0.11878968, 0.52188694, 0.99999994, 0.41960785)
+
+[node name="Label" type="Label" parent="." unique_id=909700202]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -13.0
+offset_right = 21.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "5"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
