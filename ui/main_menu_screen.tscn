@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bdt16mp7ww064"]
 
+[ext_resource type="Script" uid="uid://bxl2t601ftjkx" path="res://ui/main_menu_screen.gd" id="1_5aifs"]
 [ext_resource type="Texture2D" uid="uid://danm34wwmlhho" path="res://ui/environment-preview.png" id="1_rmr83"]
 [ext_resource type="Theme" uid="uid://cgvy45r7poc24" path="res://ui/theme/game_theme.tres" id="2_8uxxo"]
 [ext_resource type="Texture2D" uid="uid://bplwcqmd677or" path="res://ui/player-run-4.png" id="3_ei257"]
 [ext_resource type="Texture2D" uid="uid://b7co7q37f4mkw" path="res://ui/crab-idle-2.png" id="4_p8ri8"]
 
-[node name="MainMenu" type="CanvasLayer" unique_id=124946697]
+[node name="MainMenuScreen" type="CanvasLayer" unique_id=124946697]
+script = ExtResource("1_5aifs")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=990803195]
 anchors_preset = 15
@@ -34,6 +36,10 @@ size_flags_vertical = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=1759786438]
 layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=863564327]
 layout_mode = 2
@@ -53,3 +59,6 @@ texture = ExtResource("3_ei257")
 [node name="CrabIdle2" type="Sprite2D" parent="." unique_id=1230228125]
 position = Vector2(252, 234)
 texture = ExtResource("4_p8ri8")
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

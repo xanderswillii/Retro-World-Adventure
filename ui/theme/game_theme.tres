@@ -1,3 +1,38 @@
 [gd_resource type="Theme" format=3 uid="uid://cgvy45r7poc24"]
 
+[ext_resource type="FontFile" uid="uid://cyb2uglny72le" path="res://ui/theme/GravityRegular5.ttf" id="1_v71op"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ghru"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.25662354, 0.17862204, 0.57219267, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.27187255, 0.08236959, 0.41028565, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tgo0r"]
+bg_color = Color(0.24919441, 0.0317874, 0.38248187, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v71op"]
+bg_color = Color(0.4720418, 0.10356424, 0.6989411, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtkdr"]
+bg_color = Color(0.84705883, 0.22745098, 0.59607846, 0.5529412)
+
 [resource]
+Button/font_sizes/font_size = 11
+Button/fonts/font = ExtResource("1_v71op")
+Button/styles/disabled = SubResource("StyleBoxFlat_4ghru")
+Button/styles/focus = SubResource("StyleBoxFlat_tgo0r")
+Button/styles/hover = SubResource("StyleBoxFlat_v71op")
+Button/styles/normal = SubResource("StyleBoxFlat_4ghru")
+Button/styles/pressed = SubResource("StyleBoxFlat_tgo0r")
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_dtkdr")
