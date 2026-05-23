@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://iubegfjnyogq" path="res://ui/health_bar/health_bar.tscn" id="1_g4tl3"]
 [ext_resource type="Script" uid="uid://dlm6ip7tspel4" path="res://ui/game_screen.gd" id="1_vb34k"]
 [ext_resource type="Texture2D" uid="uid://b1wpboft1yc88" path="res://collectibles/coins-chests-etc-2-0.png" id="2_sp4y4"]
+[ext_resource type="Texture2D" uid="uid://dklvctykv5v7n" path="res://ui/icons8-pause-12.png" id="4_bethk"]
 
 [node name="GameScreen" type="CanvasLayer" unique_id=2066167113]
 script = ExtResource("1_vb34k")
@@ -46,3 +47,11 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 12
 text = "0"
+
+[node name="PauseTextureButton" type="TextureButton" parent="MarginContainer" unique_id=1046781647]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("4_bethk")
+
+[connection signal="pressed" from="MarginContainer/PauseTextureButton" to="." method="_on_pause_texture_button_pressed"]

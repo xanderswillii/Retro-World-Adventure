@@ -23,6 +23,17 @@ bg_color = Color(0.4720418, 0.10356424, 0.6989411, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtkdr"]
 bg_color = Color(0.84705883, 0.22745098, 0.59607846, 0.5529412)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyriv"]
+bg_color = Color(0.5058824, 0.08235294, 0.6627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7gvb"]
+bg_color = Color(0.37954685, 0.2944121, 0.79264534, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.16470589, 0.019607844, 0.23529412, 1)
+
 [resource]
 Button/font_sizes/font_size = 11
 Button/fonts/font = ExtResource("1_v71op")
@@ -36,3 +47,5 @@ MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
 MarginContainer/constants/margin_top = 10
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_dtkdr")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_xyriv")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_h7gvb")

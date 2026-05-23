@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://b7co7q37f4mkw" path="res://ui/crab-idle-2.png" id="4_p8ri8"]
 
 [node name="MainMenuScreen" type="CanvasLayer" unique_id=124946697]
+process_mode = 3
+layer = 2
 script = ExtResource("1_5aifs")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=990803195]
