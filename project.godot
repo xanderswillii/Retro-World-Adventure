@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameManager="*uid://cmbuelm2b3fto"
 HealthManager="*uid://exl5mk78eqhl"
 CollectibleManager="*uid://b8mrcpfpnsn58"
+SettingsManager="*uid://dwph7gmotinpo"
 
 [display]
 

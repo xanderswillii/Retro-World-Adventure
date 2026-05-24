@@ -26,7 +26,7 @@ func _on_window_mode_option_button_item_selected(index: int) -> void:
 	print("window mode", window_mode)
 
 func _on_resolution_option_button_item_selected(index: int) -> void:
-	var resolution = resolution.get(resolution_option_button.get_item_text(index)) as Vector2i
+	var resolution = resolutions.get(resolution_option_button.get_item_text(index)) as Vector2i
 	print("resolution", resolution)
 
 func _on_main_menu_button_pressed() -> void:

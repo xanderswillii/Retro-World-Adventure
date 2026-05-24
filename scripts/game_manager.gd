@@ -9,6 +9,7 @@ var level_1 = preload("res://levels/level_1.tscn")
 func _ready():
 	RenderingServer.set_default_clear_color(Color(0.44,0.12,0.50,0.99))
 
+	SettingsManager.load_settings()
 
 func start_game():
 	if get_tree().paused:
@@ -16,6 +17,7 @@ func start_game():
 		return
 	
 	transition_to_scene(level_1.resource_path)
+	
 	
 func exit_game():
 	get_tree().quit()
