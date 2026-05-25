@@ -23,6 +23,7 @@ func load_settings():
 		set_resolution(settings_data.resolution, settings_data.resolution_index)
 		
 func set_window_mode(window_mode : int, window_mode_index : int):
+	print("Settings window mode", window_mode)
 	match window_mode:
 		DisplayServer.WINDOW_MODE_FULLSCREEN:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
@@ -47,5 +48,5 @@ func get_settings() -> SettingsDataResource:
 	return settings_data
 	
 	
-func save_setings():
-	ResourceSaver.save(settings_data, save_settings_path * save_file_name)
+func save_settings():
+	ResourceSaver.save(settings_data, save_settings_path + save_file_name)
