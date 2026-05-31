@@ -22,6 +22,7 @@ HealthManager="*uid://exl5mk78eqhl"
 CollectibleManager="*uid://b8mrcpfpnsn58"
 SettingsManager="*uid://dwph7gmotinpo"
 SceneManager="*uid://bely7ghkfrw3c"
+InventoryManager="*uid://45bnfcy7nk4g"
 
 [display]
 
@@ -74,6 +75,7 @@ shoot={
 2d_physics/layer_4="PICKUP"
 2d_physics/layer_5="COLLECTIBLES"
 2d_physics/layer_6="DOORS"
+2d_physics/layer_7="KEYS"
 
 [physics]
 

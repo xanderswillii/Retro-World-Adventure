@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://r0q3jxux1wft"]
+
+[ext_resource type="Script" uid="uid://cs2bf5b1h3i1d" path="res://levels/keys/key.gd" id="1_ncheo"]
+[ext_resource type="Texture2D" uid="uid://fxasy3sx1rac" path="res://levels/keys/tile_0027.png" id="2_hpgo8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_piycw"]
+
+[node name="Key" type="Node2D" unique_id=263860226]
+script = ExtResource("1_ncheo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=194251348]
+texture = ExtResource("2_hpgo8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=532245709]
+collision_layer = 64
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=50780059]
+shape = SubResource("CircleShape2D_piycw")
+debug_color = Color(0.70543987, 0.37264982, 0.81051224, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
