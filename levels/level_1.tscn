@@ -21,6 +21,7 @@ tile_map_data = PackedByteArray("AAD8//n/AAAOAAcAAAD8//r/AAAPAAgAAAD9//n/AAAPAAc
 
 [node name="Player" parent="." index="3" unique_id=1908757539]
 position = Vector2(56, -56)
+jump_count = 3
 
 [node name="Foreground" parent="." index="4" unique_id=289473192]
 tile_map_data = PackedByteArray("AAAKAP3/AAABAAYAAAAKAP7/AAABAAcAAAAKAP//AAABAAgAAAATAP3/AAABAAYAAAATAP7/AAABAAcAAAATAP//AAABAAgAAAAYAP3/AAABAAYAAAAYAP7/AAABAAcAAAAYAP//AAABAAgAAAA=")
