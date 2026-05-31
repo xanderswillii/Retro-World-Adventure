@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cqyvct1gvh5ui" path="res://collectibles/Gem/gems.tscn" id="7_dvnjj"]
 [ext_resource type="PackedScene" uid="uid://cl4nkcxasjlfw" path="res://collectibles/Diamond/diamond.tscn" id="8_1digy"]
 [ext_resource type="PackedScene" uid="uid://f87r7t5p0r4c" path="res://enemies/dino/enemy_dino.tscn" id="9_4her3"]
+[ext_resource type="PackedScene" uid="uid://dn4yroa6670mu" path="res://levels/door/door.tscn" id="10_s108n"]
 
 [node name="TestLevel" unique_id=304558790 instance=ExtResource("1_7dtao")]
 
@@ -43,3 +44,8 @@ position = Vector2(525, 1)
 
 [node name="EnemyDino" parent="." index="10" unique_id=801729110 instance=ExtResource("9_4her3")]
 position = Vector2(785, 29)
+
+[node name="Door" parent="." index="11" unique_id=452799260 instance=ExtResource("10_s108n")]
+position = Vector2(964, 35)
+scale = Vector2(-1, 1)
+next_scene = "level1"

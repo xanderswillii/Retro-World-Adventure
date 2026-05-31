@@ -26,7 +26,7 @@ func _physics_process(delta: float):
 		current_node_state.on_physics_process(delta)
 	
 	
-	print("current State: ", current_node_state.name.to_lower())
+
 	
 	
 func transition_to(node_state_name: String):
