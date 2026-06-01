@@ -25,7 +25,7 @@ func load_settings():
 func set_window_mode(window_mode : int, window_mode_index : int):
 	print("Settings window mode", window_mode)
 	match window_mode:
-		DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		DisplayServer.WINDOW_MODE_WINDOWED:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
