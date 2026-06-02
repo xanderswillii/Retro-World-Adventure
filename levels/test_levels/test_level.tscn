@@ -31,9 +31,6 @@ key_id = "12345"
 position = Vector2(552, -1)
 key_id = "12345"
 
-[node name="Player" parent="." index="6" unique_id=1908757539]
-jump_count = 3
-
 [node name="EnemyCrab" parent="." index="8" unique_id=357453463 instance=ExtResource("4_hvxhd")]
 position = Vector2(588, 24)
 
