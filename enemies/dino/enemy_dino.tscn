@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bln1gxq800wxr" path="res://enemies/dino/gravity.gd" id="3_5pvth"]
 [ext_resource type="Script" uid="uid://h0sjrcnwb1a8" path="res://scripts/state_machine/node_finite_state_machine.gd" id="4_4hrw4"]
 [ext_resource type="Script" uid="uid://c2x110u8kl2kw" path="res://enemies/dino/state_machine_controller.gd" id="4_lxac6"]
-[ext_resource type="Script" uid="uid://c80y0xhbvj4c8" path="res://enemies/dino/idle_state.gd" id="5_ng162"]
+[ext_resource type="Script" uid="uid://c80y0xhbvj4c8" path="res://scripts/idle_script.gd" id="5_ng162"]
 [ext_resource type="Script" uid="uid://cvw410d31i0uo" path="res://enemies/dino/attack_state.gd" id="6_lxac6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4hrw4"]

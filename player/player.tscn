@@ -10,6 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://cwpocev56qswf" path="res://player/player-shoot-stand.png" id="8_2ieo8"]
 [ext_resource type="Texture2D" uid="uid://d1x4db4gq4o5m" path="res://player/player-shoot-up.png" id="9_ebec5"]
 [ext_resource type="Texture2D" uid="uid://7tyjwn5wihep" path="res://player/player-shoot-wall-cling.png" id="10_yllr7"]
+[ext_resource type="Script" uid="uid://h0sjrcnwb1a8" path="res://scripts/state_machine/node_finite_state_machine.gd" id="11_ebec5"]
+[ext_resource type="Script" uid="uid://q8erxyd52scf" path="res://player/player_states/idle_state.gd" id="12_yllr7"]
+[ext_resource type="Script" uid="uid://c7vnfie8rwmy1" path="res://player/player_states/fall_state.gd" id="13_yllr7"]
+[ext_resource type="Script" uid="uid://bwqv3mec4eeq8" path="res://player/player_states/run_state.gd" id="14_kb6p2"]
+[ext_resource type="Script" uid="uid://bkldo4ffnnhiu" path="res://player/player_states/jump_state.gd" id="15_wodsf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_boad6"]
 shader = ExtResource("2_g6k8r")
@@ -361,5 +366,27 @@ collision_mask = 4
 position = Vector2(-1, -20)
 shape = SubResource("CapsuleShape2D_qjkh3")
 debug_color = Color(0.90916276, 0.18714705, 0.585297, 0.41960785)
+
+[node name="StateMachine" type="Node" parent="." unique_id=442555365 node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("11_ebec5")
+initial_node_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=882077552 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("12_yllr7")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Fall" type="Node" parent="StateMachine" unique_id=433901250 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("13_yllr7")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Run" type="Node" parent="StateMachine" unique_id=1049227613 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("14_kb6p2")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Jump" type="Node" parent="StateMachine" unique_id=676959163]
+script = ExtResource("15_wodsf")
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
