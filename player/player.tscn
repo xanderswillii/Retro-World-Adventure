@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://bwqv3mec4eeq8" path="res://player/player_states/run_state.gd" id="14_kb6p2"]
 [ext_resource type="Script" uid="uid://bkldo4ffnnhiu" path="res://player/player_states/jump_state.gd" id="15_wodsf"]
 [ext_resource type="Script" uid="uid://b74mxewih2ufu" path="res://player/player_states/shoot_stand_state.gd" id="16_32hag"]
+[ext_resource type="Script" uid="uid://cp3rymtj1iy4w" path="res://player/player_states/shoot_up_state.gd" id="17_tqiix"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_boad6"]
 shader = ExtResource("2_g6k8r")
@@ -349,7 +350,7 @@ script = ExtResource("1_g1dw6")
 material = SubResource("ShaderMaterial_boad6")
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_e7oew")
-animation = &"shoot_stand"
+animation = &"shoot_up"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=845753940]
@@ -395,6 +396,12 @@ max_jump_count = 3
 
 [node name="ShootStand" type="Node" parent="StateMachine" unique_id=1684046397 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
 script = ExtResource("16_32hag")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+muzzle = NodePath("../../Muzzle")
+
+[node name="ShootUp" type="Node" parent="StateMachine" unique_id=34797011 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
+script = ExtResource("17_tqiix")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 muzzle = NodePath("../../Muzzle")
