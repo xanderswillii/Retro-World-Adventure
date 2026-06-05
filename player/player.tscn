@@ -414,8 +414,10 @@ character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 muzzle = NodePath("../../Muzzle")
 
-[node name="ShootRun" type="Node" parent="StateMachine" unique_id=540180646]
+[node name="ShootRun" type="Node" parent="StateMachine" unique_id=540180646 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
 script = ExtResource("19_c35mf")
-hold_gun_time = null
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+muzzle = NodePath("../../Muzzle")
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
