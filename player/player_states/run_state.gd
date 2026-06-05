@@ -14,6 +14,8 @@ func on_process(delta : float):
 func on_physics_process(delta : float):
 	var direction : float = GameInputEvents.movement_input()
 	
+	if !character_body_2d.is_on_floor():
+		character_body_2d.velocity.y += 1000 * delta
 	
 	if direction:
 		character_body_2d.velocity.x += direction * speed
