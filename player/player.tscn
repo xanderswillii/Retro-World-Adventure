@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://cp3rymtj1iy4w" path="res://player/player_states/shoot_up_state.gd" id="17_tqiix"]
 [ext_resource type="Script" uid="uid://g85njang5urn" path="res://player/player_states/shoot_crouch_state.gd" id="18_e7oew"]
 [ext_resource type="Script" uid="uid://c66kxepmrn4ar" path="res://player/player_states/shoot_run_state.gd" id="19_c35mf"]
+[ext_resource type="Script" uid="uid://x6wyik41tlpy" path="res://player/player_states/shoot_wall_cling_state.gd" id="20_65viv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_boad6"]
 shader = ExtResource("2_g6k8r")
@@ -338,6 +339,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c35mf"]
+radius = 7.0
 height = 42.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qjkh3"]
@@ -352,7 +354,7 @@ script = ExtResource("1_g1dw6")
 material = SubResource("ShaderMaterial_boad6")
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_e7oew")
-animation = &"shoot_stand"
+animation = &"shoot_wall_cling"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=845753940]
@@ -360,13 +362,14 @@ position = Vector2(-1, -20)
 shape = SubResource("CapsuleShape2D_c35mf")
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=1560796516]
-position = Vector2(19, -27)
+position = Vector2(21, -25)
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1552352584]
 collision_layer = 2
 collision_mask = 4
 
 [node name="HurtboxCollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1911840312]
+visible = false
 position = Vector2(-1, -20)
 shape = SubResource("CapsuleShape2D_qjkh3")
 debug_color = Color(0.90916276, 0.18714705, 0.585297, 0.41960785)
@@ -416,6 +419,12 @@ muzzle = NodePath("../../Muzzle")
 
 [node name="ShootRun" type="Node" parent="StateMachine" unique_id=540180646 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
 script = ExtResource("19_c35mf")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+muzzle = NodePath("../../Muzzle")
+
+[node name="ShootWallCling" type="Node" parent="StateMachine" unique_id=94613164 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
+script = ExtResource("20_65viv")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 muzzle = NodePath("../../Muzzle")
