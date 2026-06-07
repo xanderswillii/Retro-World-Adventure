@@ -392,11 +392,14 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 script = ExtResource("14_kb6p2")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+speed = 800
+max_horizontal_speed = 250
 
 [node name="Jump" type="Node" parent="StateMachine" unique_id=676959163 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
 script = ExtResource("15_wodsf")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+jump_horizontal_speed = 450
 max_jump_count = 3
 
 [node name="ShootStand" type="Node" parent="StateMachine" unique_id=1684046397 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
