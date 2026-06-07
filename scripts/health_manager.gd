@@ -6,7 +6,8 @@ var current_health : int
 signal on_health_changed
 
 func _ready():
-	current_health = max_health
+	if current_health == 0:
+		current_health = max_health
 	
 func decrease_health(health_amount : int):
 	current_health -= health_amount

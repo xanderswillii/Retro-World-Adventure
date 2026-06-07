@@ -105,8 +105,8 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_acn7t"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_au006"]
-radius = 64.070274
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxac6"]
+size = Vector2(251, 58)
 
 [node name="EnemyDino" type="CharacterBody2D" unique_id=801729110]
 collision_layer = 4
@@ -138,21 +138,21 @@ initial_node_state = NodePath("Idle")
 script = ExtResource("5_ng162")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
-slow_down_speed = 300
+slow_down_speed = 400
 
 [node name="Attack" type="Node" parent="StateMachine" unique_id=1849780703 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
 script = ExtResource("6_lxac6")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
-speed = 100
+speed = 240
 
 [node name="AttackArea2D" type="Area2D" parent="." unique_id=33004374]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D" unique_id=1023441407]
-position = Vector2(-1, -10)
-shape = SubResource("CircleShape2D_au006")
+position = Vector2(9.5, -29)
+shape = SubResource("RectangleShape2D_lxac6")
 debug_color = Color(0.7309984, 0.4719832, 0.07899413, 0.41960785)
 
 [connection signal="body_entered" from="AttackArea2D" to="StateMachineController" method="_on_attack_area_2d_body_entered"]
