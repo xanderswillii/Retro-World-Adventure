@@ -400,6 +400,7 @@ script = ExtResource("15_wodsf")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 jump_horizontal_speed = 450
+max_jump_horizontal_speed = 240
 max_jump_count = 3
 
 [node name="ShootStand" type="Node" parent="StateMachine" unique_id=1684046397 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]

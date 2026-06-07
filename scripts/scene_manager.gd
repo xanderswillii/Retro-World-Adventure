@@ -3,7 +3,8 @@ extends Node
 var scene_transition_screen = preload("res://ui/screen_transition/scene_transition_screen.tscn")
 
 var scenes : Dictionary = { "level1": "res://levels/level_1.tscn",
-							"level2": "res://levels/level_2.tscn"}
+							"level2": "res://levels/level_2.tscn",
+							"level3": "res://levels/level_3.tscn"}
 
 
 func _transition_to_scene(level : String):
