@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b1wpboft1yc88" path="res://collectibles/coins-chests-etc-2-0.png" id="1_nu71i"]
 [ext_resource type="Script" uid="uid://br75e2xp2wllg" path="res://collectibles/blue_coin/blue_coin.gd" id="1_oo3kn"]
+[ext_resource type="AudioStream" uid="uid://65tc5ccf5d3d" path="res://SFX/coin.wav" id="3_evunr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oo3kn"]
 atlas = ExtResource("1_nu71i")
@@ -89,5 +90,8 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "1"
 horizontal_alignment = 1
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="." unique_id=764045714]
+stream = ExtResource("3_evunr")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

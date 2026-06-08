@@ -117,16 +117,16 @@ position = Vector2(-28, -5)
 position = Vector2(48, -6)
 
 [node name="EnemyCrab2" parent="Enemies" index="1" unique_id=2117899293 node_paths=PackedStringArray("patrol_points") instance=ExtResource("3_8l0e1")]
-position = Vector2(709, 232)
+position = Vector2(697, 232)
 patrol_points = NodePath("PatrolPoints")
 
 [node name="PatrolPoints" type="Node2D" parent="Enemies/EnemyCrab2" index="3" unique_id=1698798624]
 
 [node name="Point1" type="Marker2D" parent="Enemies/EnemyCrab2/PatrolPoints" index="0" unique_id=433358480]
-position = Vector2(-54, -1)
+position = Vector2(-46, 2)
 
 [node name="Point2" type="Marker2D" parent="Enemies/EnemyCrab2/PatrolPoints" index="1" unique_id=1436682968]
-position = Vector2(56, 8)
+position = Vector2(52, 5)
 
 [node name="PlayerCamera2D" parent="." index="5" unique_id=646131820]
 smoothing_enabled = true
