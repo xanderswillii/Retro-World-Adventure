@@ -104,6 +104,7 @@ wait_time = 3.0
 autostart = true
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1882925438]
+position = Vector2(1, 0)
 collision_layer = 4
 collision_mask = 2
 

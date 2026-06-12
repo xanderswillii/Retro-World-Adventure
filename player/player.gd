@@ -6,7 +6,12 @@ var player_death_effect = preload("res://player/player_death_effect/player_death
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var muzzle : Marker2D = $Muzzle
 
-
+func _ready():
+	HealthManager.on_health_changed.connect(_on_health_changed)
+	
+func _on_health_changed(health : int): # ADDED
+	if HealthManager.is_dead:
+		player_death()
 
 
 
@@ -27,6 +32,3 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 		tween.tween_property(animated_sprite_2d, "material:shader_parameter/enabled", false, 0.2)
 
 		HealthManager.decrease_health(body.damage_amount)
-
-	if HealthManager.current_health == 0:
-		player_death()

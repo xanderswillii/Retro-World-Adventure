@@ -108,6 +108,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lxac6"]
 size = Vector2(271, 58)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lxac6"]
+radius = 11.18034
+
 [node name="EnemyDino" type="CharacterBody2D" unique_id=801729110]
 collision_layer = 4
 
@@ -155,5 +158,16 @@ position = Vector2(-0.5, -29)
 shape = SubResource("RectangleShape2D_lxac6")
 debug_color = Color(0.7309984, 0.4719832, 0.07899413, 0.41960785)
 
+[node name="Hurtbox" type="Area2D" parent="." unique_id=783983464]
+position = Vector2(0, -15)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1657079189]
+position = Vector2(-1, 5)
+shape = SubResource("CircleShape2D_lxac6")
+debug_color = Color(0.8946257, 0.00023969114, 0.79137915, 0.41960785)
+
 [connection signal="body_entered" from="AttackArea2D" to="StateMachineController" method="_on_attack_area_2d_body_entered"]
 [connection signal="body_exited" from="AttackArea2D" to="StateMachineController" method="_on_attack_area_2d_body_exited"]
+[connection signal="body_entered" from="Hurtbox" to="StateMachine/Attack" method="_on_hurtbox_body_entered"]

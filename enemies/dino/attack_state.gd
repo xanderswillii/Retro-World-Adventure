@@ -3,6 +3,7 @@ extends NodeState
 @export var character_body_2d : CharacterBody2D
 @export var animated_sprite_2d : AnimatedSprite2D
 @export var speed : int
+@onready var damage_amount : int = 1
 
 var player : CharacterBody2D
 var max_speed : int
@@ -27,6 +28,8 @@ func on_physics_process(delta : float):
 	character_body_2d.velocity.x = clamp(character_body_2d.velocity.x, -max_speed,max_speed)
 	character_body_2d.move_and_slide()
 	
+
+	
 func enter():
 	player = get_tree().get_nodes_in_group("Player")[0] as CharacterBody2D
 	max_speed = speed * 20
@@ -34,3 +37,12 @@ func enter():
 	
 func exit():
 	pass
+
+
+
+
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	print("Dino hurtbox body entered:", body.name)
+	if body.is_in_group("Player"):
+		HealthManager.decrease_health(damage_amount)
