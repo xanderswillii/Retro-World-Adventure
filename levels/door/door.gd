@@ -3,6 +3,7 @@ extends Node2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var door_sound : AudioStreamPlayer2D = $DoorSound
 
 @export var next_scene : String
 @export var key_id : String
@@ -26,6 +27,7 @@ func _on_activate_door_area_2d_body_entered(body: Node2D) -> void:
 		
 		if !door_open:
 			animated_sprite_2d.play("open")
+			door_sound.play()
 			door_open = true
 			collision_shape_2d.set_deferred("disabled", true)
 

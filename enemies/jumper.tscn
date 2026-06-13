@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dhdedncbelcvv"]
+
+[ext_resource type="Texture2D" uid="uid://d3undja1un615" path="res://enemies/jumper-idle.png" id="1_k253u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4y17"]
+atlas = ExtResource("1_k253u")
+region = Rect2(0, 0, 47, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh5fy"]
+atlas = ExtResource("1_k253u")
+region = Rect2(47, 0, 47, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbcbn"]
+atlas = ExtResource("1_k253u")
+region = Rect2(94, 0, 47, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buj0d"]
+atlas = ExtResource("1_k253u")
+region = Rect2(141, 0, 47, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6g4et"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4y17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh5fy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbcbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buj0d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubr7x"]
+size = Vector2(28.25, 20)
+
+[node name="Jumper" type="CharacterBody2D" unique_id=2008420093]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1694193525]
+sprite_frames = SubResource("SpriteFrames_6g4et")
+animation = &"idle"
+frame = 3
+frame_progress = 0.92909425
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=388818418]
+visible = false
+position = Vector2(0.875, 4)
+shape = SubResource("RectangleShape2D_ubr7x")

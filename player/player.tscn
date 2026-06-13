@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://bwqv3mec4eeq8" path="res://player/player_states/run_state.gd" id="14_kb6p2"]
 [ext_resource type="Script" uid="uid://bkldo4ffnnhiu" path="res://player/player_states/jump_state.gd" id="15_wodsf"]
 [ext_resource type="Script" uid="uid://b74mxewih2ufu" path="res://player/player_states/shoot_stand_state.gd" id="16_32hag"]
+[ext_resource type="AudioStream" uid="uid://c1f3l6dkp8f44" path="res://SFX/Jump.wav" id="16_x7c3f"]
 [ext_resource type="Script" uid="uid://cp3rymtj1iy4w" path="res://player/player_states/shoot_up_state.gd" id="17_tqiix"]
 [ext_resource type="Script" uid="uid://g85njang5urn" path="res://player/player_states/shoot_crouch_state.gd" id="18_e7oew"]
 [ext_resource type="Script" uid="uid://c66kxepmrn4ar" path="res://player/player_states/shoot_run_state.gd" id="19_c35mf"]
@@ -403,6 +404,9 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 jump_horizontal_speed = 450
 max_jump_horizontal_speed = 240
 max_jump_count = 3
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="StateMachine/Jump" unique_id=1952399502]
+stream = ExtResource("16_x7c3f")
 
 [node name="ShootStand" type="Node" parent="StateMachine" unique_id=1684046397 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
 script = ExtResource("16_32hag")
