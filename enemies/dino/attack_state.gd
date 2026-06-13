@@ -3,7 +3,7 @@ extends NodeState
 @export var character_body_2d : CharacterBody2D
 @export var animated_sprite_2d : AnimatedSprite2D
 @export var speed : int
-@onready var damage_amount : int = 1
+@onready var damage_amount : int = 2
 
 var player : CharacterBody2D
 var max_speed : int
