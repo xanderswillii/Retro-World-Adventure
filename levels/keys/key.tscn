@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cs2bf5b1h3i1d" path="res://levels/keys/key.gd" id="1_ncheo"]
 [ext_resource type="Texture2D" uid="uid://fxasy3sx1rac" path="res://levels/keys/tile_0027.png" id="2_hpgo8"]
+[ext_resource type="AudioStream" uid="uid://bjlrnxpbaiwu2" path="res://SFX/keyss.ogg" id="3_hpgo8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_piycw"]
 
@@ -18,5 +19,8 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=50780059]
 shape = SubResource("CircleShape2D_piycw")
 debug_color = Color(0.70543987, 0.37264982, 0.81051224, 0.41960785)
+
+[node name="KeySound" type="AudioStreamPlayer2D" parent="." unique_id=1303755197]
+stream = ExtResource("3_hpgo8")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

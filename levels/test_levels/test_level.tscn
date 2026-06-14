@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cqyvct1gvh5ui" path="res://collectibles/Gem/gems.tscn" id="7_dvnjj"]
 [ext_resource type="PackedScene" uid="uid://cl4nkcxasjlfw" path="res://collectibles/Diamond/diamond.tscn" id="8_1digy"]
 [ext_resource type="PackedScene" uid="uid://dn4yroa6670mu" path="res://levels/door/door.tscn" id="10_s108n"]
+[ext_resource type="PackedScene" uid="uid://cn1xvhxofth8u" path="res://spike.tscn" id="11_2e087"]
 
 [node name="TestLevel" unique_id=304558790 instance=ExtResource("1_7dtao")]
 
@@ -51,3 +52,11 @@ position = Vector2(470, 3)
 
 [node name="Diamond" parent="Collectibles" index="2" unique_id=1468304558 instance=ExtResource("8_1digy")]
 position = Vector2(525, 1)
+
+[node name="spike" parent="." index="13" unique_id=621601760 instance=ExtResource("11_2e087")]
+position = Vector2(279, 24)
+scale = Vector2(1, -1)
+
+[node name="spike2" parent="." index="14" unique_id=1635591562 instance=ExtResource("11_2e087")]
+position = Vector2(380, 25)
+current_state = 1
