@@ -40,7 +40,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ubr7x"]
@@ -51,8 +51,7 @@ size = Vector2(28.25, 20)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1694193525]
 sprite_frames = SubResource("SpriteFrames_6g4et")
 animation = &"idle"
-frame = 3
-frame_progress = 0.92909425
+frame_progress = 0.7286992
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=388818418]
 visible = false
