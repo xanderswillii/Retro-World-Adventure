@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ior72krdhpe1" path="res://enemies/bats/BatStandard_Hurt.png" id="5_m3f47"]
 [ext_resource type="Texture2D" uid="uid://bw2xdxa4fjgje" path="res://enemies/bats/BatStandard_Sleeping.png" id="6_wxxwl"]
 [ext_resource type="Script" uid="uid://de78y376uy7tg" path="res://enemies/bats/sleeping.gd" id="7_7qy64"]
+[ext_resource type="Script" uid="uid://cicoxrqw6mw6m" path="res://enemies/bats/flying.gd" id="7_m3f47"]
+[ext_resource type="Script" uid="uid://bkfyy3fvtaij1" path="res://enemies/bats/attack.gd" id="8_wxxwl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7impp"]
 atlas = ExtResource("2_b2xxi")
@@ -198,12 +200,18 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_m3f47"]
 radius = 7.071068
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qy64"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wxxwl"]
+radius = 22.022715
+
 [node name="Bats" type="CharacterBody2D" unique_id=1024056807]
 script = ExtResource("1_477ku")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1161145149]
 sprite_frames = SubResource("SpriteFrames_7qy64")
-animation = &"attack"
+animation = &"flying"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=64051069]
 position = Vector2(0, -2)
@@ -212,8 +220,10 @@ shape = SubResource("CircleShape2D_m3f47")
 [node name="StateMachine" type="Node" parent="." unique_id=438749583]
 
 [node name="Flying" type="Node" parent="StateMachine" unique_id=1230505116]
+script = ExtResource("7_m3f47")
 
 [node name="Attack" type="Node" parent="StateMachine" unique_id=664468107]
+script = ExtResource("8_wxxwl")
 
 [node name="Hurt" type="Node" parent="StateMachine" unique_id=1060945199]
 
@@ -225,5 +235,17 @@ script = ExtResource("7_7qy64")
 [node name="HurtBox" type="Area2D" parent="." unique_id=1552997355]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=779984569]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_7qy64")
+debug_color = Color(0.8064943, 0.33954465, 0.62169796, 0.41960785)
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=10595281]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1449376135]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_wxxwl")
+debug_color = Color(0.6034692, 0.41554427, 0.07896634, 0.41960785)
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="body_entered" from="AttackArea" to="StateMachine/Flying" method="_on_attack_area_body_entered"]
+[connection signal="body_entered" from="AttackArea" to="StateMachine/Sleeping" method="_on_attack_area_body_entered"]
