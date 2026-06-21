@@ -6,9 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://v65gf3f2wtrm" path="res://enemies/bats/BatStandard_Death.png" id="3_7qy64"]
 [ext_resource type="Texture2D" uid="uid://ior72krdhpe1" path="res://enemies/bats/BatStandard_Hurt.png" id="5_m3f47"]
 [ext_resource type="Texture2D" uid="uid://bw2xdxa4fjgje" path="res://enemies/bats/BatStandard_Sleeping.png" id="6_wxxwl"]
+[ext_resource type="Script" uid="uid://h0sjrcnwb1a8" path="res://scripts/state_machine/node_finite_state_machine.gd" id="7_7impp"]
 [ext_resource type="Script" uid="uid://de78y376uy7tg" path="res://enemies/bats/sleeping.gd" id="7_7qy64"]
 [ext_resource type="Script" uid="uid://cicoxrqw6mw6m" path="res://enemies/bats/flying.gd" id="7_m3f47"]
 [ext_resource type="Script" uid="uid://bkfyy3fvtaij1" path="res://enemies/bats/attack.gd" id="8_wxxwl"]
+[ext_resource type="Script" uid="uid://c62l5lvmfhqbt" path="res://enemies/bats/hurt.gd" id="10_1xa8n"]
+[ext_resource type="Script" uid="uid://cs4m2s86vqe1m" path="res://enemies/bats/death.gd" id="11_7e2iw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7impp"]
 atlas = ExtResource("2_b2xxi")
@@ -201,51 +204,76 @@ animations = [{
 radius = 7.071068
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7qy64"]
-radius = 7.0
+radius = 11.045361
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wxxwl"]
-radius = 22.022715
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e2iw"]
+size = Vector2(88, 44)
 
-[node name="Bats" type="CharacterBody2D" unique_id=1024056807]
+[node name="Bats" type="CharacterBody2D" unique_id=1024056807 groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 128
+motion_mode = 1
 script = ExtResource("1_477ku")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1161145149]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_7qy64")
-animation = &"flying"
+animation = &"attack"
+frame = 1
+frame_progress = 0.9853674
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=64051069]
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_m3f47")
 
-[node name="StateMachine" type="Node" parent="." unique_id=438749583]
+[node name="StateMachine" type="Node" parent="." unique_id=438749583 node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("7_7impp")
+initial_node_state = NodePath("Sleeping")
 
-[node name="Flying" type="Node" parent="StateMachine" unique_id=1230505116]
+[node name="Flying" type="Node" parent="StateMachine" unique_id=1230505116 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
 script = ExtResource("7_m3f47")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Attack" type="Node" parent="StateMachine" unique_id=664468107]
+[node name="Attack" type="Node" parent="StateMachine" unique_id=664468107 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
 script = ExtResource("8_wxxwl")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Hurt" type="Node" parent="StateMachine" unique_id=1060945199]
+[node name="Hurt" type="Node" parent="StateMachine" unique_id=1060945199 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("10_1xa8n")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Death" type="Node" parent="StateMachine" unique_id=1337603100]
+[node name="Death" type="Node" parent="StateMachine" unique_id=1337603100 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("11_7e2iw")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Sleeping" type="Node" parent="StateMachine" unique_id=2056853069]
+[node name="Sleeping" type="Node" parent="StateMachine" unique_id=2056853069 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
 script = ExtResource("7_7qy64")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=1552997355]
+collision_layer = 4
+collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=779984569]
-position = Vector2(0, -2)
+position = Vector2(-1, -5)
 shape = SubResource("CircleShape2D_7qy64")
 debug_color = Color(0.8064943, 0.33954465, 0.62169796, 0.41960785)
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=10595281]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1449376135]
-position = Vector2(0, -2)
-shape = SubResource("CircleShape2D_wxxwl")
+position = Vector2(-1, -5)
+shape = SubResource("RectangleShape2D_7e2iw")
 debug_color = Color(0.6034692, 0.41554427, 0.07896634, 0.41960785)
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="body_entered" from="AttackArea" to="StateMachine/Flying" method="_on_attack_area_body_entered"]
 [connection signal="body_entered" from="AttackArea" to="StateMachine/Sleeping" method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="StateMachine/Attack" method="_on_attack_area_body_exited"]

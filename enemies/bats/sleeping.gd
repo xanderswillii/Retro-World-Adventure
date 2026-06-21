@@ -18,5 +18,7 @@ func exit():
 
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
+	print("Attack area entered: ", body.name)
 	if body.is_in_group("Player"):
+		print("Player detected, transition to attack!")
 		transition.emit("Attack")

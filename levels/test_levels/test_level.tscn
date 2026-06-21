@@ -63,4 +63,4 @@ position = Vector2(380, 25)
 current_state = 1
 
 [node name="Bats" parent="." index="15" unique_id=1024056807 instance=ExtResource("12_outf3")]
-position = Vector2(195, 16)
+position = Vector2(182, -63)

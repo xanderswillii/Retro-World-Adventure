@@ -14,7 +14,7 @@ func _ready():
 			child.transition.connect(transition_to)
 	
 	if initial_node_state:
-		initial_node_state.enter
+		initial_node_state.enter()
 		current_node_state = initial_node_state
 	
 func _process(delta : float):
@@ -31,6 +31,9 @@ func _physics_process(delta: float):
 	
 	
 func transition_to(node_state_name: String):
+	if current_node_state == null:
+		return
+		
 	if node_state_name == current_node_state.name.to_lower():
 		return
 		
