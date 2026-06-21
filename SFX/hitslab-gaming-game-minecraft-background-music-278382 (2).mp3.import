@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://diat1ljdr3lxj"
+path="res://.godot/imported/hitslab-gaming-game-minecraft-background-music-278382 (2).mp3-af06ad9fbc74ca9a34e7e9b36e16c05a.mp3str"
+
+[deps]
+
+source_file="res://SFX/hitslab-gaming-game-minecraft-background-music-278382 (2).mp3"
+dest_files=["res://.godot/imported/hitslab-gaming-game-minecraft-background-music-278382 (2).mp3-af06ad9fbc74ca9a34e7e9b36e16c05a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

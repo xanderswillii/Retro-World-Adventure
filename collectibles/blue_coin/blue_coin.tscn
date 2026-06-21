@@ -93,5 +93,6 @@ horizontal_alignment = 1
 
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="." unique_id=764045714]
 stream = ExtResource("3_evunr")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

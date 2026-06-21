@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bwx4yc0nr1jip"]
+
+[ext_resource type="AudioStream" uid="uid://diat1ljdr3lxj" path="res://SFX/hitslab-gaming-game-minecraft-background-music-278382 (2).mp3" id="1_q6386"]
+
+[node name="Music" type="AudioStreamPlayer2D" unique_id=1346501096]
+stream = ExtResource("1_q6386")
+autoplay = true
+bus = &"Music"

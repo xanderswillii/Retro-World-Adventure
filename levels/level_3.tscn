@@ -135,13 +135,13 @@ position = Vector2(42, 2)
 smoothing_enabled = true
 smoothing_distance = 2
 
-[node name="Door2" type="Node" parent="." index="6" unique_id=2032148302]
+[node name="Door3" type="Node" parent="." index="6" unique_id=2032148302]
 
-[node name="Key" parent="Door2" index="0" unique_id=263860226 instance=ExtResource("3_wj73x")]
+[node name="Key" parent="Door3" index="0" unique_id=263860226 instance=ExtResource("3_wj73x")]
 position = Vector2(45, -40)
 key_id = "12"
 
-[node name="Door" parent="Door2" index="1" unique_id=1365405053 instance=ExtResource("4_0unm6")]
+[node name="Door" parent="Door3" index="1" unique_id=1365405053 instance=ExtResource("4_0unm6")]
 position = Vector2(864, -67)
 rotation = 3.1415927
 scale = Vector2(1, -1)

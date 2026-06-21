@@ -15,6 +15,10 @@ run/main_scene="uid://bdt16mp7ww064"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://banhawp6tbnat"
+
 [autoload]
 
 GameManager="*uid://cmbuelm2b3fto"
@@ -23,6 +27,7 @@ CollectibleManager="*uid://b8mrcpfpnsn58"
 SettingsManager="*uid://dwph7gmotinpo"
 SceneManager="*uid://bely7ghkfrw3c"
 InventoryManager="*uid://45bnfcy7nk4g"
+Music="*uid://bwx4yc0nr1jip"
 
 [display]
 
