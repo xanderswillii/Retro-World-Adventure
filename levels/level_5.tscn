@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cqyvct1gvh5ui" path="res://collectibles/Gem/gems.tscn" id="10_bon8i"]
 [ext_resource type="PackedScene" uid="uid://cl4nkcxasjlfw" path="res://collectibles/Diamond/diamond.tscn" id="11_av2kh"]
 [ext_resource type="PackedScene" uid="uid://cn1xvhxofth8u" path="res://spike.tscn" id="13_gci8k"]
+[ext_resource type="PackedScene" uid="uid://dxu8ncx38tbp3" path="res://enemies/bats/bats.tscn" id="14_gder6"]
 
 [sub_resource type="Animation" id="Animation_20opy"]
 length = 0.001
@@ -152,6 +153,9 @@ position = Vector2(1248, 204)
 [node name="EnemyDino" parent="Enemies" index="4" unique_id=801729110 instance=ExtResource("3_ij65d")]
 position = Vector2(203, 655)
 
+[node name="EnemyDino2" parent="Enemies" index="5" unique_id=45920878 instance=ExtResource("3_ij65d")]
+position = Vector2(1246, -84)
+
 [node name="PlayerCamera2D" parent="." index="5" unique_id=646131820]
 smoothing_enabled = true
 smoothing_distance = 2
@@ -159,7 +163,7 @@ smoothing_distance = 2
 [node name="Door5" type="Node" parent="." index="6" unique_id=2032148302]
 
 [node name="Key" parent="Door5" index="0" unique_id=263860226 instance=ExtResource("3_gci8k")]
-position = Vector2(45, -40)
+position = Vector2(1343, 212)
 key_id = "12"
 
 [node name="Door" parent="Door5" index="1" unique_id=1365405053 instance=ExtResource("4_gder6")]
@@ -335,3 +339,7 @@ position = Vector2(1356.9999, 391.99997)
 rotation = 0.000827061
 scale = Vector2(0.99999994, 0.99999994)
 current_state = 1
+
+[node name="Bats" parent="." index="14" unique_id=1024056807 instance=ExtResource("14_gder6")]
+position = Vector2(1066, 53)
+scale = Vector2(1, -1)
