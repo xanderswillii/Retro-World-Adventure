@@ -19,5 +19,3 @@ func exit():
 	
 func on_hurt_timeout():
 	transition.emit("Flying")
-	
-	

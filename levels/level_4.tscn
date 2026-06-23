@@ -185,11 +185,11 @@ position = Vector2(955, 423)
 
 [node name="Key" parent="Door4" index="0" unique_id=263860226 instance=ExtResource("12_qhnv2")]
 position = Vector2(573, -63)
-key_id = "12"
+key_id = "1234"
 
 [node name="Door" parent="Door4" index="1" unique_id=1365405053 instance=ExtResource("13_vru0x")]
 position = Vector2(1282, 686)
 rotation = 3.1415927
 scale = Vector2(1, -1)
-next_scene = "level4"
-key_id = "12"
+next_scene = "level5"
+key_id = "1234"

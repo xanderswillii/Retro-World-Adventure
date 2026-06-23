@@ -10,6 +10,7 @@ func on_physics_process(delta : float):
 	pass
 	
 func enter():
+	print("Death state entered!")
 	animated_sprite_2d.play("death")
 	await animated_sprite_2d.animation_finished
 	character_body_2d.queue_free()

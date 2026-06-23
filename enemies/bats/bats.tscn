@@ -204,7 +204,7 @@ animations = [{
 radius = 7.071068
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7qy64"]
-radius = 11.045361
+radius = 13.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7e2iw"]
 radius = 54.037025
@@ -218,9 +218,8 @@ script = ExtResource("1_477ku")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1161145149]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_7qy64")
-animation = &"attack"
-frame = 1
-frame_progress = 0.9853674
+animation = &"sleeping"
+frame_progress = 0.32548884
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=64051069]
 position = Vector2(0, -2)
@@ -257,15 +256,15 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=1552997355]
 collision_layer = 4
-collision_mask = 128
+collision_mask = 130
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=779984569]
-position = Vector2(-1, -5)
+position = Vector2(-2, -4)
 shape = SubResource("CircleShape2D_7qy64")
 debug_color = Color(0.8064943, 0.33954465, 0.62169796, 0.41960785)
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=10595281]
-collision_layer = 4
+collision_layer = 128
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1449376135]
