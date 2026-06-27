@@ -195,7 +195,7 @@ autoplay = &"move"
 [node name="Pickups" type="Node" parent="." index="11" unique_id=16452631]
 
 [node name="HealthPickup" parent="Pickups" index="0" unique_id=1964690976 instance=ExtResource("8_mgx0j")]
-position = Vector2(357, 628)
+position = Vector2(764, 416)
 
 [node name="Collectibles" type="Node" parent="." index="12" unique_id=1458424664]
 
