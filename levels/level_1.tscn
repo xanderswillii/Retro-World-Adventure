@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dn4yroa6670mu" path="res://levels/door/door.tscn" id="5_n46q3"]
 [ext_resource type="PackedScene" uid="uid://cd28534xijjwn" path="res://collectibles/blue_coin/blue_coin.tscn" id="7_l53as"]
 [ext_resource type="PackedScene" uid="uid://cqyvct1gvh5ui" path="res://collectibles/Gem/gems.tscn" id="8_3sk1a"]
+[ext_resource type="FontFile" uid="uid://ckhj8atr0jbrt" path="res://ui/Malam Poek.otf" id="9_3sk1a"]
 
 [node name="Level1" unique_id=304558790 instance=ExtResource("1_vn7o3")]
 
@@ -79,3 +80,14 @@ position = Vector2(1606, -102)
 
 [node name="GreenGem" parent="Collectibles" index="5" unique_id=1199082386 instance=ExtResource("8_3sk1a")]
 position = Vector2(281, -140)
+
+[node name="Label" type="Label" parent="." index="10" unique_id=220416948]
+z_index = -1
+offset_left = 290.0
+offset_top = -93.0
+offset_right = 540.0
+offset_bottom = -34.0
+theme_override_fonts/font = ExtResource("9_3sk1a")
+theme_override_font_sizes/font_size = 25
+text = "shoot with f
+3 times to kill"

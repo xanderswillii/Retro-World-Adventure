@@ -5,6 +5,7 @@ var bullet = preload("res://player/bullet.tscn")
 @export var character_body_2d : CharacterBody2D
 @export var animated_sprite_2d : AnimatedSprite2D
 @export var muzzle: Marker2D 
+@export var shoot_sound : AudioStreamPlayer2D
 
 var muzzle_position : Vector2
 
@@ -56,3 +57,4 @@ func gun_shooting():
 	bullet_instance.move_x_direction = true
 	bullet_instance.global_position = muzzle.global_position
 	get_parent().add_child(bullet_instance)
+	shoot_sound.play()

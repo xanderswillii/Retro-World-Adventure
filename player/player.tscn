@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://g85njang5urn" path="res://player/player_states/shoot_crouch_state.gd" id="18_e7oew"]
 [ext_resource type="Script" uid="uid://c66kxepmrn4ar" path="res://player/player_states/shoot_run_state.gd" id="19_c35mf"]
 [ext_resource type="Script" uid="uid://x6wyik41tlpy" path="res://player/player_states/shoot_wall_cling_state.gd" id="20_65viv"]
+[ext_resource type="AudioStream" uid="uid://c638agwg8xiii" path="res://SFX/bullet_shooot_sfx.wav" id="22_bjvpn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_boad6"]
 shader = ExtResource("2_g6k8r")
@@ -408,34 +409,43 @@ max_jump_count = 3
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="StateMachine/Jump" unique_id=1952399502]
 stream = ExtResource("16_x7c3f")
 
-[node name="ShootStand" type="Node" parent="StateMachine" unique_id=1684046397 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
+[node name="ShootStand" type="Node" parent="StateMachine" unique_id=1684046397 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle", "shoot_sound")]
 script = ExtResource("16_32hag")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 muzzle = NodePath("../../Muzzle")
+shoot_sound = NodePath("../../ShootSound")
 
-[node name="ShootUp" type="Node" parent="StateMachine" unique_id=34797011 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
+[node name="ShootUp" type="Node" parent="StateMachine" unique_id=34797011 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle", "shoot_sound")]
 script = ExtResource("17_tqiix")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 muzzle = NodePath("../../Muzzle")
+shoot_sound = NodePath("../../ShootSound")
 
-[node name="ShootCrouch" type="Node" parent="StateMachine" unique_id=555445766 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
+[node name="ShootCrouch" type="Node" parent="StateMachine" unique_id=555445766 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle", "shoot_sound")]
 script = ExtResource("18_e7oew")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 muzzle = NodePath("../../Muzzle")
+shoot_sound = NodePath("../../ShootSound")
 
-[node name="ShootRun" type="Node" parent="StateMachine" unique_id=540180646 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
+[node name="ShootRun" type="Node" parent="StateMachine" unique_id=540180646 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle", "shoot_sound")]
 script = ExtResource("19_c35mf")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 muzzle = NodePath("../../Muzzle")
+shoot_sound = NodePath("../../ShootSound")
 
-[node name="ShootWallCling" type="Node" parent="StateMachine" unique_id=94613164 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
+[node name="ShootWallCling" type="Node" parent="StateMachine" unique_id=94613164 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle", "shoot_sound")]
 script = ExtResource("20_65viv")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 muzzle = NodePath("../../Muzzle")
+shoot_sound = NodePath("../../ShootSound")
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="." unique_id=629219760]
+stream = ExtResource("22_bjvpn")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

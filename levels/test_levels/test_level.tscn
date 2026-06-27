@@ -47,6 +47,7 @@ position = Vector2(823, -6)
 position = Vector2(894, -2)
 
 [node name="Label" type="Label" parent="." index="11" unique_id=211088785]
+z_index = -1
 offset_left = 128.0
 offset_top = -62.0
 offset_right = 378.0
@@ -56,6 +57,7 @@ theme_override_font_sizes/font_size = 25
 text = "Welcome Player"
 
 [node name="Label2" type="Label" parent="." index="12" unique_id=1431677280]
+z_index = -1
 offset_left = 1054.0
 offset_top = -92.0
 offset_right = 1345.0
@@ -66,6 +68,7 @@ text = "Need a key to
 unlock next level"
 
 [node name="Label3" type="Label" parent="." index="13" unique_id=1298263129]
+z_index = -1
 offset_left = 703.0
 offset_top = -108.0
 offset_right = 994.0
@@ -76,6 +79,7 @@ text = "fun gems to
 colllect"
 
 [node name="Label4" type="Label" parent="." index="14" unique_id=1334438807]
+z_index = -1
 offset_left = 416.0
 offset_top = -94.0
 offset_right = 707.0

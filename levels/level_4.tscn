@@ -128,6 +128,9 @@ autoplay = &"move"
 [node name="HealthPickup" parent="Pickups" index="0" unique_id=1964690976 instance=ExtResource("6_vru0x")]
 position = Vector2(528, 560)
 
+[node name="HealthPickup2" parent="Pickups" index="1" unique_id=1026763976 instance=ExtResource("6_vru0x")]
+position = Vector2(1096, 617)
+
 [node name="Collectibles" type="Node" parent="." index="10" unique_id=1458424664]
 
 [node name="BlueCoin" parent="Collectibles" index="0" unique_id=1929891030 instance=ExtResource("7_5oqfd")]
@@ -220,7 +223,28 @@ position = Vector2(918, 645)
 [node name="spike7" parent="." index="19" unique_id=2100563939 instance=ExtResource("11_04hp8")]
 position = Vector2(907, 645)
 
-[node name="Label" type="Label" parent="." index="20" unique_id=1420123202]
+[node name="spike8" parent="." index="20" unique_id=177241362 instance=ExtResource("11_04hp8")]
+position = Vector2(700, 582)
+
+[node name="spike9" parent="." index="21" unique_id=1097163655 instance=ExtResource("11_04hp8")]
+position = Vector2(720, 582)
+
+[node name="spike10" parent="." index="22" unique_id=651847815 instance=ExtResource("11_04hp8")]
+position = Vector2(740, 582)
+
+[node name="spike11" parent="." index="23" unique_id=1310024199 instance=ExtResource("11_04hp8")]
+position = Vector2(760, 582)
+
+[node name="spike12" parent="." index="24" unique_id=1590115864 instance=ExtResource("11_04hp8")]
+position = Vector2(780, 582)
+
+[node name="spike13" parent="." index="25" unique_id=1801315608 instance=ExtResource("11_04hp8")]
+position = Vector2(800, 582)
+
+[node name="spike14" parent="." index="26" unique_id=1454361449 instance=ExtResource("11_04hp8")]
+position = Vector2(814, 582)
+
+[node name="Label" type="Label" parent="." index="27" unique_id=1420123202]
 offset_left = 678.0
 offset_top = -96.0
 offset_right = 965.0

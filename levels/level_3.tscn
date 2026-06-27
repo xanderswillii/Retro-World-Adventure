@@ -132,9 +132,8 @@ position = Vector2(-46, 2)
 [node name="Point2" type="Marker2D" parent="Enemies/EnemyCrab2/PatrolPoints" index="1" unique_id=1436682968]
 position = Vector2(42, 2)
 
-[node name="EnemyCrab3" parent="Enemies" index="2" unique_id=1703966310 node_paths=PackedStringArray("patrol_points") instance=ExtResource("3_8l0e1")]
+[node name="EnemyCrab3" parent="Enemies" index="2" unique_id=1703966310 instance=ExtResource("3_8l0e1")]
 position = Vector2(555, -115)
-patrol_points = NodePath("")
 
 [node name="PlayerCamera2D" parent="." index="5" unique_id=646131820]
 smoothing_enabled = true
@@ -189,6 +188,7 @@ position = Vector2(470, 3)
 position = Vector2(253, 484)
 
 [node name="Label" type="Label" parent="." index="13" unique_id=1565413923]
+z_index = -1
 offset_left = 135.0
 offset_top = -1.0
 offset_right = 422.0
@@ -198,3 +198,14 @@ theme_override_font_sizes/font_size = 25
 text = "cling on the wall
 by jumping and
  pressing C"
+
+[node name="Label2" type="Label" parent="." index="14" unique_id=806200351]
+z_index = -1
+offset_left = 382.0
+offset_top = 571.0
+offset_right = 669.0
+offset_bottom = 661.0
+theme_override_fonts/font = ExtResource("12_0unm6")
+theme_override_font_sizes/font_size = 25
+text = "replenish your
+ health by 1 "
