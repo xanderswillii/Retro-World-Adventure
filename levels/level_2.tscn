@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://f87r7t5p0r4c" path="res://enemies/dino/enemy_dino.tscn" id="7_ep78u"]
 [ext_resource type="PackedScene" uid="uid://cd28534xijjwn" path="res://collectibles/blue_coin/blue_coin.tscn" id="8_at1ld"]
 [ext_resource type="PackedScene" uid="uid://cl4nkcxasjlfw" path="res://collectibles/Diamond/diamond.tscn" id="9_sd18g"]
+[ext_resource type="FontFile" uid="uid://ckhj8atr0jbrt" path="res://ui/Malam Poek.otf" id="10_sd18g"]
 
 [node name="Level2" unique_id=304558790 instance=ExtResource("1_v5uil")]
 
@@ -76,9 +77,10 @@ position = Vector2(939, -171)
 position = Vector2(773, -51)
 
 [node name="Label" type="Label" parent="." index="12" unique_id=995873160]
-offset_left = 1137.0
-offset_top = -116.0
-offset_right = 1443.0
-offset_bottom = -31.0
+offset_left = 1136.0
+offset_top = -123.0
+offset_right = 1525.0
+offset_bottom = -38.0
+theme_override_fonts/font = ExtResource("10_sd18g")
 theme_override_font_sizes/font_size = 21
 text = "You can't kill it. only dodge."

@@ -106,7 +106,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_acn7t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lxac6"]
-size = Vector2(271, 58)
+size = Vector2(271, 70)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lxac6"]
 radius = 11.18034
@@ -154,7 +154,7 @@ collision_layer = 128
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D" unique_id=1023441407]
-position = Vector2(-0.5, -29)
+position = Vector2(-0.5, -23)
 shape = SubResource("RectangleShape2D_lxac6")
 debug_color = Color(0.7309984, 0.4719832, 0.07899413, 0.41960785)
 

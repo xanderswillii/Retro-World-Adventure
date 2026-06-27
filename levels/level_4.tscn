@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cn1xvhxofth8u" path="res://spike.tscn" id="11_04hp8"]
 [ext_resource type="PackedScene" uid="uid://r0q3jxux1wft" path="res://levels/keys/key.tscn" id="12_qhnv2"]
 [ext_resource type="PackedScene" uid="uid://dn4yroa6670mu" path="res://levels/door/door.tscn" id="13_vru0x"]
+[ext_resource type="FontFile" uid="uid://ckhj8atr0jbrt" path="res://ui/Malam Poek.otf" id="15_5oqfd"]
 
 [sub_resource type="Animation" id="Animation_lfnxh"]
 length = 0.001
@@ -218,3 +219,12 @@ position = Vector2(918, 645)
 
 [node name="spike7" parent="." index="19" unique_id=2100563939 instance=ExtResource("11_04hp8")]
 position = Vector2(907, 645)
+
+[node name="Label" type="Label" parent="." index="20" unique_id=1420123202]
+offset_left = 678.0
+offset_top = -96.0
+offset_right = 965.0
+offset_bottom = -6.0
+theme_override_fonts/font = ExtResource("15_5oqfd")
+theme_override_font_sizes/font_size = 25
+text = "HEY HEY"
