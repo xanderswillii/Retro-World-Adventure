@@ -103,6 +103,10 @@ position = Vector2(140, 682)
 position = Vector2(618, -115)
 scale = Vector2(1, -1)
 
+[node name="Bats2" parent="Enemies" index="4" unique_id=453311724 instance=ExtResource("4_vru0x")]
+position = Vector2(1097, 282)
+scale = Vector2(1, -1)
+
 [node name="PlayerCamera2D" parent="." index="5" unique_id=646131820]
 smoothing_enabled = true
 smoothing_distance = 2
@@ -185,11 +189,32 @@ position = Vector2(955, 423)
 
 [node name="Key" parent="Door4" index="0" unique_id=263860226 instance=ExtResource("12_qhnv2")]
 position = Vector2(573, -63)
-key_id = "1234"
+key_id = "21"
 
 [node name="Door" parent="Door4" index="1" unique_id=1365405053 instance=ExtResource("13_vru0x")]
 position = Vector2(1282, 686)
 rotation = 3.1415927
 scale = Vector2(1, -1)
 next_scene = "level5"
-key_id = "1234"
+key_id = "21"
+
+[node name="spike" parent="." index="13" unique_id=1148430082 instance=ExtResource("11_04hp8")]
+position = Vector2(1018, 645)
+
+[node name="spike2" parent="." index="14" unique_id=1071253668 instance=ExtResource("11_04hp8")]
+position = Vector2(998, 645)
+
+[node name="spike3" parent="." index="15" unique_id=476590168 instance=ExtResource("11_04hp8")]
+position = Vector2(978, 645)
+
+[node name="spike4" parent="." index="16" unique_id=2093796805 instance=ExtResource("11_04hp8")]
+position = Vector2(958, 645)
+
+[node name="spike5" parent="." index="17" unique_id=1066677307 instance=ExtResource("11_04hp8")]
+position = Vector2(938, 645)
+
+[node name="spike6" parent="." index="18" unique_id=262972346 instance=ExtResource("11_04hp8")]
+position = Vector2(918, 645)
+
+[node name="spike7" parent="." index="19" unique_id=2100563939 instance=ExtResource("11_04hp8")]
+position = Vector2(907, 645)

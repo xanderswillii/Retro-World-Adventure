@@ -74,3 +74,11 @@ position = Vector2(939, -171)
 
 [node name="Diamond" parent="." index="11" unique_id=1468304558 instance=ExtResource("9_sd18g")]
 position = Vector2(773, -51)
+
+[node name="Label" type="Label" parent="." index="12" unique_id=995873160]
+offset_left = 1137.0
+offset_top = -116.0
+offset_right = 1443.0
+offset_bottom = -31.0
+theme_override_font_sizes/font_size = 21
+text = "You can't kill it. only dodge."

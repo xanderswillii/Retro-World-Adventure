@@ -16,7 +16,7 @@ func start_game():
 		continue_game()
 		return
 	
-	SceneManager._transition_to_scene("level1")
+	SceneManager._transition_to_scene("testlevel")
 	
 	
 func exit_game():
